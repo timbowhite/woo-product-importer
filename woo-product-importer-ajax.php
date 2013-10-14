@@ -37,6 +37,8 @@
     );
 
     if(isset($post_data['uploaded_file_path'])) {
+        set_time_limit(0);
+        ignore_user_abort(true);
 
         setlocale(LC_ALL, $post_data['user_locale']);
 
@@ -664,6 +666,7 @@
                         } else {
                             $image_gallery_ids[] = $attachment_id;
                         }
+                        sleep(1);
                     }
 
                     if(count($image_gallery_ids) > 0) {
@@ -689,6 +692,7 @@
                 'messages' => $new_post_messages,
                 'success' => $new_post_insert_success
             );
+            sleep(3);
         }
     }
 
