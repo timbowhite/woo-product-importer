@@ -336,7 +336,7 @@
                         $term_ids = explode('|', $col);
                         foreach($term_ids as $term_id) {
                             //$term = get_term_by('id', $term_id, $tax, 'ARRAY_A');
-                            $term = term_exists($term_id, $tax);
+                            $term = term_exists((int)$term_id, $tax);
                             
                             //if we got a term, save the id so we can associate
                             if(is_array($term)) {
